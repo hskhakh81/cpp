@@ -44,5 +44,19 @@ int main(){
     return 0;
 }
 
+int printNumbers(int minVal,int maxVal,int curVal){
+    if(curVal == minVal){
+        for(int i=0;i<minVal-1;i++){
+            cout<<" ";
+        }
+        cout<<minVal;
+    } else {
+        while(curVal-- > 0){cout < " ";}
+        int i=maxVal;
+        while(i > minVal){cout << i--;}
+
+    }
+
+}
 
 
