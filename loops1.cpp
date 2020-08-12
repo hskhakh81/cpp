@@ -1,3 +1,8 @@
+/**
+File: loops1.cpp
+Author: Harpreet Khakh
+Purpose: display usage of loops
+*/
 #include <iostream>
 #include <conio.h>
 using namespace std;
