@@ -32,8 +32,9 @@ int main(){
 
 int find_gpf(int num, int div, int gpf) {
 
-    if (gpf == 1) {
+    if (gpf == 1 || num == div) {
         //base case
+        cout << "base case reached, num=" << num << ", div=" << div << ", gpf=" << gpf <<endl;
         return div;
     } else {
         //calcualte new values (i.e. make problem smaller as per recursion)
@@ -44,10 +45,12 @@ int find_gpf(int num, int div, int gpf) {
         } else {
             div++;
         }
+        cout << "Num=" << num << ", Div=" << div << ",GPF=" << gpf << endl;
         //call self as per recursion (notice parameters values have changed with above calculations)
-        find_gpf(num, div, gpf);
+        return find_gpf(num, div, gpf);
 
     }
+
 }
 
 /***
@@ -65,7 +68,11 @@ NUM     DIV     GPF     NUM % DIV   NUM / DIV
 5       5       5       0           1       <---- div resets to 2 here
 1       2       1                           <--- this is why 2 is returned .. when GPF is 1, base case is reached
 
+---changes to be made
+5       5       5       0           1       <---- change base case to add num = div condition, so this becomes base case
+1       2       1                           <---- this will never be reached if above is base case
 
+-- also keep base case value for return
 
 
 
