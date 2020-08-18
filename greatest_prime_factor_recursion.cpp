@@ -32,7 +32,7 @@ int main(){
 
 int find_gpf(int num, int div, int gpf) {
 
-    if (gpf = 1) {
+    if (gpf == 1) {
         //base case
         return div;
     } else {
@@ -40,6 +40,7 @@ int find_gpf(int num, int div, int gpf) {
         if (num % div == 0) {
             gpf = num / div;
             num = gpf;
+            div = 2;
         } else {
             div++;
         }
@@ -49,4 +50,23 @@ int find_gpf(int num, int div, int gpf) {
     }
 }
 
+/***
+Example
+NUM     DIV     GPF     NUM % DIV   NUM / DIV
+----    ----    ----    ---------   ----------
+120     2       120     0           60
+60      2       60      0           30
+30      2       30      0           15
+15      2       30      1           -
+15      3       15      0           5
+5       2       5       1           -
+5       3       5       2           -
+5       4       5       1           -
+5       5       5       0           1       <---- div resets to 2 here
+1       2       1                           <--- this is why 2 is returned .. when GPF is 1, base case is reached
 
+
+
+
+
+*/
